@@ -1,11 +1,12 @@
-==========
-Direct API
-==========
+==============================================================
+django-direct - A RESTFul API for Direct Certificate Discovery
+==============================================================
 
-Direct is a simple Django app that provides a RESTFul 
-API to validate and fetch Direct certificate.
+django-direct is a simple Django application that provides a RESTFul 
+API to validate and fetch Direct x509 certificate via LDAP and DNS.
 
-Detailed documentation is in the "docs" directory.
+Detailed documentation for using the API is in the "docs" directory. 
+Installation instructions are below.
 
 Quick start
 -----------
@@ -28,7 +29,7 @@ Quick start
 
 4. There are no models in this application so there is no migration step.
 
-5. Use the APIs. Visit http://127.0.0.1:8000/direct/validate/[endpoint] to get a JSON validation report.
+5. Use the APIs.  Visit http://127.0.0.1:8000/direct/validate/[endpoint] to get a JSON validation report.
 Visit http://127.0.0.1:8000/direct/get-certificate/[endpoint].pem to get a PEM certificate.
-Visit http://127.0.0.1:8000/direct/get-certificate/[endpoint].txt to get the response as text repsonse.
+Visit http://127.0.0.1:8000/direct/get-certificate/[endpoint].txt to get the response as text repsonse. See docs folder for more information.
 
