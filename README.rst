@@ -16,14 +16,14 @@ Quick start
     pip install django-direct
 
 
-2. Add "polls" to your INSTALLED_APPS setting like this::
+2. Add "direct" to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = (
         ...
         'direct',
     )
 
-3. Include the polls URLconf in your project urls.py like this::
+3. Include the direct URLconf in your project urls.py like this::
 
     url(r'^direct/', include('direct.urls')),
 
