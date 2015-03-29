@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-direct',
-    version='0.5',
+    version='0.7',
     packages=['direct'],
     include_package_data=True,
     license='GPL2 License',  
@@ -17,7 +17,7 @@ setup(
     long_description=README,
     url='https://github.com/hhsidealab/django-direct',
     author='Alan Viars',
-    author_email='ala.viars@cms.hhs.gov',
+    author_email='alan.viars@cms.hhs.gov',
     install_requires=[
         'getdc', ],
     classifiers=[
