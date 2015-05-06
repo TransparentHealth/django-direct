@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+<html lang="en">
+<head>
+
+<title>django-direct - A Direct x509 Certificate Discovery and Inspection API. </title>
+
+
+</head>
+<body>
+      <h1>Welcome to django-direct, a Direct x509 certificate discovery 
+and inspection API.</h1>
+      
+ <p>This API is a RESTFul wrapper around the getdc Python library 
+and command line tool. Below are the URLs this application provides.
+Always run this service using HTTPS in production. No authentication is
+required for this API.</p>
+      
+       <table border="1">
+  <tr>
+    <td>NAME</td>
+    <td>DESCRIPTION</td>
+    <td>METHOD</td>
+    <td>URL</td>
+  </tr>
+  
+  <tr>
+    <td>Get Certificate</td>
+    <td>Fetch the certificate(s) from a given endpoint in .PEM format 
+from DNS and LDAP. Appending ".pem" to the endpoint will return a .PEM file 
+instead of ASCII. Replace the endpoint with an actual endpoint.
+    <td>GET</td>
+    <td>{% url 'get_direct_endpoint_certificate_no_extension' 'endpoint'  %}</td>
+  </tr>
+  
+  <tr>
+    <td>Validate Certificate</td>
+    <td>Fetch the certificate details from a given endpoint from DNS and LDAP.
+Returns a JSON document giving information about the certificate if found.
+    <td>GET</td>
+    <td>{% url 'get_direct_endpoint_certificate_no_extension' 'endpoint'  %}</t$
+  </tr>
+
+
+
+
+
+</table> 
+      
+
+	
+    
+</body>
+
+</html>
+
