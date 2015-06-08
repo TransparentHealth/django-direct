@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from getdc.getdc import DCert
+from getdc.get_direct_certificate import DCert
 import json
 
 def validate_direct_endpoint(request, endpoint):

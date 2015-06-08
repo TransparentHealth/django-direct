@@ -9,10 +9,10 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-direct',
-    version='0.7',
+    version='0.7.2',
     packages=['direct'],
     include_package_data=True,
-    license='GPL2 License',  
+    license='Public Domain',  
     description='A simple Django application that provides a RESTFul Direct certificate validation API.',
     long_description=README,
     url='https://github.com/hhsidealab/django-direct',

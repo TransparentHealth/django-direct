@@ -29,7 +29,6 @@ Quick start
 
 4. There are no models in this application so there is no migration step.
 
-5. Use the APIs.  Visit http://127.0.0.1:8000/direct/validate/[endpoint] to get a JSON validation report.
-Visit http://127.0.0.1:8000/direct/get-certificate/[endpoint].pem to get a PEM certificate.
-Visit http://127.0.0.1:8000/direct/get-certificate/[endpoint].txt to get the response as text repsonse. See docs folder for more information.
+5. Use the APIs.  Visit http://127.0.0.1:8000/direct/ to verify the installation and for more information.  
+See the docs folder for more information.
 
