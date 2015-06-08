@@ -3,7 +3,7 @@
 
 from django.conf.urls import patterns, include, url
 from views import *
-
+from  django.views.generic.base import TemplateView
 
 urlpatterns = patterns('',
 
@@ -23,5 +23,8 @@ urlpatterns = patterns('',
     url(r'^get-certificate/(?P<endpoint>\S+)',
         get_direct_endpoint_certificate,
         name="get_direct_endpoint_certificate_no_extension"),
+    
+    url(r'^$', TemplateView.as_view(template_name='direct/splash.html'),
+        name="direct_splash"),
 
     )
