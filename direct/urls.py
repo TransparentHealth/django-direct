@@ -9,6 +9,10 @@ urlpatterns = patterns('',
 
     
     #Direct
+    url(r'verify-with-pem-form', walk_chain_with_pem,  name="direct_verify_with_pem_form"),
+    url(r'verify-with-discovery-form', walk_chain_with_discovery,  name="direct_verify_with_discovery_form"),
+    
+    
     url(r'^validate/(?P<endpoint>\S+)', validate_direct_endpoint,
         name="validate_direct_endpoint"),
     
