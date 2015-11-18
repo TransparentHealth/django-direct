@@ -9,17 +9,18 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-direct',
-    version='0.7.2',
+    version='0.7.4',
     packages=['direct'],
     include_package_data=True,
-    license='Public Domain',  
+    license='GPLv2',  
     description='A simple Django application that provides a RESTFul Direct certificate validation API.',
     long_description=README,
-    url='https://github.com/hhsidealab/django-direct',
+    url='https://github.com/videntity/django-direct',
     author='Alan Viars',
-    author_email='alan.viars@cms.hhs.gov',
+    author_email='sales@videntity.com',
     install_requires=[
-        'getdc', ],
+        'getdc', 'Django>=1.7', 'django-widget-tweaks', 'django-bootstrap-form',
+        'pyOpenSSL' ],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
