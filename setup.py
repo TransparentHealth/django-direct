@@ -9,8 +9,8 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-direct',
-    version='0.7.4',
-    packages=['direct'],
+    version='0.7.6',
+    packages=['direct', ],
     include_package_data=True,
     license='GPLv2',  
     description='A simple Django application that provides a RESTFul Direct certificate validation API.',
@@ -19,7 +19,7 @@ setup(
     author='Alan Viars',
     author_email='sales@videntity.com',
     install_requires=[
-        'getdc', 'Django>=1.7', 'django-widget-tweaks', 'django-bootstrap-form',
+        'getdc', 'Django<=1.8.6', 'django-widget-tweaks', 'django-bootstrap-form',
         'pyOpenSSL' ],
     classifiers=[
         'Environment :: Web Environment',
