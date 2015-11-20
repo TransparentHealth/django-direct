@@ -11,10 +11,12 @@
         <div class="col-lg-12">
             <div class="jumbotron">
               <h1>Welcome to django-direct</h1>
-               <p>django-direct is a reusable,  open-source, RESTFul
-               API for inspecting x509 certificates found in DNS or LDAP. The GET methods are for
-               machine readable results, whereas the POST methods offer some human
-               interfaces for testing purposes.</p>
+               <p>django-direct is a reusable, open-source, RESTFul
+               API for inspecting x509 certificates found in DNS or LDAP.
+			   The GET methods are for machine readable results, whereas the POST
+			   methods offer some human interfaces for testing purposes. Only CRL
+			   revocation checking is supported.
+			   <strong>OCSP is not supported at this time.</strong></p>
                <p>django-direct wraps the getdc Python library and command line tools.
                Below are the URLs this application provides. No authentication is required
                for this API. Always run this service using HTTPS in production.</p>

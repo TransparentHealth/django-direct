@@ -5,7 +5,7 @@ from collections import OrderedDict
 
 def get_cert_highlights(certificate_results):
     
-    
+    ocsp_detected = False
     san = False
     h =  OrderedDict()
     h['Summary'] = "Unsure"
@@ -49,6 +49,11 @@ def get_cert_highlights(certificate_results):
         if k == "basicConstraints":
             h['Basic Constraints'] = extensions[k]
         
+        if k == "authorityInfoAccess":
+            h['AuthorityInfoAccess'] = extensions[k]
+            if str(h['AuthorityInfoAccess']).__contains('OCSP'):
+                ocsp_detected =True
+    h['OSCP'] = True
         
         
     h['Signature Algorithm'] = certificate_results['signature_algorithm']

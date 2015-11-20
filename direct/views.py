@@ -34,6 +34,8 @@ def  walk_chain_with_pem(request):
                 messages.warning(request, _(d))
             if not details:
                 messages.success(request, _("Certificate looks good!"))
+            print details
+                
             return render_to_response('direct/discovery.html',
                                       {'name': name,
                                        'highlights': [highlights, ],
@@ -54,6 +56,7 @@ def  walk_chain_with_pem(request):
 def  walk_chain_with_discovery(request):
     number_of_certs =0
     certs =[]
+    possible_ocsp = False
     is_good = False
     is_unsure = False
     summary="Bad"
@@ -69,8 +72,14 @@ def  walk_chain_with_discovery(request):
             #else its HTML
             if not c['is_found']:
                 messages.error(request, _("The certificate was not found in LDAP or DNS."))
+                highlights = {}
+                highlights['Summary'] = "Not Found"
+                certs = [highlights,]
                 return render_to_response('direct/discovery.html',
-                                      {'name': name},
+                                      {'name': name,
+                                       'highlights': certs,
+                                       'summary': "Not Found",                                       
+                                       },
                                             RequestContext(request))
             if  c['dns']['status'] == 200:
                 
@@ -80,6 +89,9 @@ def  walk_chain_with_discovery(request):
                     certs.append(highlights)
                     for d in highlights['Details']:
                         messages.warning(request, _(d))
+                        if d.__contains__('CRLs missing'):
+                            possible_ocsp = True
+                        
                     if highlights['Summary'] == "Good":
                         is_good = True
                     if highlights['Summary'] == "Unsure":
@@ -94,11 +106,15 @@ def  walk_chain_with_discovery(request):
                     certs.append(highlights)
                     for d in highlights['Details']:
                         messages.warning(request, _(d))
+                        if d.__contains__('CRLs missing'):
+                            possible_ocsp = True
                     if highlights['Summary'] == "Good":
                         is_good = True
                     if highlights['Summary'] == "Unsure":
                         is_unsure = True
-            
+            if possible_ocsp == True:
+                messages.info(request, _("The revocation status may be able to be confirmed with OCSP. OCSP is not yet implemented in this tool."))
+                
             if number_of_certs>1:
                 messages.info(request, _("More than one certificate was discovered."))
             
@@ -107,6 +123,8 @@ def  walk_chain_with_discovery(request):
                 summary = "Unsure"
             if is_good:
                 summary="Good"
+                messages.success(request, _("Certificate looks good!"))
+                
             
             return render_to_response('direct/discovery.html',
                                       {'highlights': certs,
