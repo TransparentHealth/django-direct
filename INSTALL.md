@@ -14,11 +14,11 @@ It was created to streamline the setup of a separate
 personal installation and provide a full working example for 
 those seeking to setup a local deployment.
 
-The AMI is `ami-f532709f`.
+The AMI is `ami-e3d79989`.
 
 You can use this URL to kick things off. 
 
-https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-f532709f
+https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-e3d79989
 
 A micro-instance is suitble for a low traffic installation.
 
