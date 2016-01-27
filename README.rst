@@ -27,8 +27,16 @@ Quick start
 
     url(r'^direct/', include('direct.urls')),
 
-4. There are no models in this application so there is no migration step.
 
-5. Use the APIs.  Visit http://127.0.0.1:8000/direct/ to verify the installation and for more information.  
+4. Add the static content to your app::
+
+   python manage.py collectstatic
+
+5. There are no models in this application so there is no migration step.
+
+6. Use the APIs.  Visit http://127.0.0.1:8000/direct/ to verify the installation and for more information.  
 See the docs folder for more information.
+
+
+Production configuration is out of scope fo this document. See https://docs.djangoproject.com/en/1.9/howto/deployment/ for more info.
 
